@@ -1,0 +1,116 @@
+.group::after, .tabsBlk .tabs::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+body {
+  color: #222;
+  font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  line-height: 1.5;
+  margin: 0 auto;
+  max-width: 50rem;
+  padding: 2.5rem 1.25rem;
+}
+@media screen and (min-width: 700px) {
+  body {
+    font-size: 137.5%;
+  }
+}
+
+p, ol, ul {
+  margin-bottom: 1.25rem;
+  margin-top: 0;
+}
+
+ol, ul {
+  padding: 0;
+  margin-left: 1.25rem;
+}
+
+.unstyledList, .tabsBlk .tabs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tabsBlk{
+  margin: 0 0 2.5rem;
+}
+
+.tabsBlk .tabs li a{
+  background-color: #fff;
+  border-color: #d8d8d8;
+  border-left-style: solid;
+  text-decoration: none;
+  border-top: solid;
+  border-width: 2px;
+  color: #d9776e;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  float: left;
+  padding: 0.625rem 1.25rem;
+  position: relative;
+  -webkit-transition: 0.1s ease-in-out;
+          transition: 0.1s ease-in-out;
+}
+.tabsBlk .tabs li:last-of-type a{
+  border-right-style: solid;
+}
+.tabsBlk .tabs li a::before, .tabsBlk .tabs li a::after{
+  content: "";
+  display: block;
+  height: 4px;
+  position: absolute;
+  -webkit-transition: 0.1s ease-in-out;
+          transition: 0.1s ease-in-out;
+}
+.tabsBlk .tabs li a::before{
+  background-color: #d9776e;
+  left: -2px;
+  right: -2px;
+  top: -2px;
+}
+.tabsBlk .tabs li a::after{
+  background-color: transparent;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+}
+@media screen and (min-width: 700px) {
+  .tabsBlk .tabs li a{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+.tabsBlk .tabs li.is-active a{
+  position: relative;
+  color: #fd5c4c;
+  z-index: 1;
+}
+.tabsBlk .tabs li.is-active a::before{
+  background-color: #fd5c4c;
+}
+.tabsBlk .tabs li.is-active a::after{
+  background-color: #fff;
+}
+
+.tabsBlk .tabs-content{
+  background-color: #fff;
+  border: 2px solid #d8d8d8;
+  padding: 1.25rem;
+}
+.tabsBlk .tab-panel{
+  display: none;
+}
+.tabsBlk .tab-panel.is-active{
+  display: block;
+}
+.tabsBlk .tab-panel > :last-child {
+  margin-bottom: 0;
+}
